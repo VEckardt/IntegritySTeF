@@ -1,7 +1,7 @@
 # IntegritySTeF
 Functional Setup Testing Framework for PTC Integrity
 
-It uses Fitnesse, a Java Wiki for the test execution.
+It uses Fitnesse (http://www.fitnesse.org/), a Java Wiki for the test execution.
 
 ## Overview
 
