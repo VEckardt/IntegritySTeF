@@ -1,5 +1,5 @@
 # IntegritySTeF
-Setup Testing Framework for PTC Integrity
+Functional Setup Testing Framework for PTC Integrity
 
 It uses Fitnesse, a Java Wiki for the test execution.
 
