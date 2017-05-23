@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="537.0" prefWidth="667.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="integrityfit.application.TestAppController">
+    <children>
+        <TabPane prefHeight="445.0" prefWidth="584.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text="Generation">
+                    <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="431.0" prefWidth="584.0">
+                            <children>
+                                <RadioButton fx:id="actOption1" layoutX="53.0" layoutY="34.0" mnemonicParsing="false" text="Retrieve all Actions performed for Item(s)">
+                                    <toggleGroup>
+                                        <ToggleGroup fx:id="tGroup" />
+                                    </toggleGroup>
+                                </RadioButton>
+                                <TextField fx:id="fldItemIDs" layoutX="80.0" layoutY="56.0" prefWidth="385.0" />
+                                <Separator layoutX="53.0" layoutY="93.0" prefWidth="537.0" />
+                                <RadioButton fx:id="actOption2" layoutX="52.0" layoutY="104.0" mnemonicParsing="false" selected="true" text="Retrieve Actions made within the" toggleGroup="$tGroup" />
+                                <Label layoutX="80.0" layoutY="130.0" text="previous" />
+                                <ChoiceBox fx:id="fldMin" layoutX="155.0" layoutY="129.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Item 1" />
+                                            <String fx:value="Item 2" />
+                                            <String fx:value="Item 3" />
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
+                                <Label layoutX="262.0" layoutY="133.0" text="minutes" />
+                                <Separator layoutX="54.0" layoutY="164.0" prefWidth="537.0" />
+                                <RadioButton fx:id="actOption3" layoutX="52.0" layoutY="179.0" mnemonicParsing="false" text="Retrieve Actions within a time frame" toggleGroup="$tGroup" />
+                                <Label layoutX="80.0" layoutY="207.0" text="from" />
+                                <ChoiceBox id="fldFrom" fx:id="fldFromDay" layoutX="155.0" layoutY="204.0" prefWidth="136.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Item 1" />
+                                            <String fx:value="Item 2" />
+                                            <String fx:value="Item 3" />
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
+                                <TextField id="fndFromHour" fx:id="fldFromTime" layoutX="312.0" layoutY="205.0" prefWidth="102.0" promptText="00:00:00" />
+                                <Label layoutX="80.0" layoutY="237.0" prefWidth="18.0" text="to" />
+                                <ChoiceBox id="fndTo" fx:id="fldToDay" layoutX="155.0" layoutY="240.0" prefWidth="136.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Item 1" />
+                                            <String fx:value="Item 2" />
+                                            <String fx:value="Item 3" />
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
+                                <TextField id="fldToHour" fx:id="fldToTime" layoutX="312.0" layoutY="240.0" prefWidth="102.0" promptText="00:00:00" />
+                                <Separator layoutX="54.0" layoutY="285.0" prefWidth="537.0" />
+                                <Label layoutX="54.0" layoutY="293.0" text="Target Fit Directory" />
+                                <ChoiceBox fx:id="targetDir" layoutX="54.0" layoutY="324.0" prefWidth="537.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Item 1" />
+                                            <String fx:value="Item 2" />
+                                            <String fx:value="Item 3" />
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
+                                <CheckBox fx:id="overwriteFlag" layoutX="52.0" layoutY="365.0" mnemonicParsing="false" selected="true" text="Overwrite Test Case if exists" />
+                                <Button id="button" layoutX="213.0" layoutY="412.0" onAction="#exitForm" prefWidth="82.0" text="Cancel" />
+                                <Button fx:id="button" layoutX="359.0" layoutY="412.0" onAction="#genFixture" text="Generate" />
+                                <ImageView fitHeight="62.000099999997474" fitWidth="69.75011249999716" layoutX="544.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@STeF.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Config">
+                    <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label layoutX="90.0" layoutY="191.0" text="Hostname" />
+                                <Label layoutX="90.0" layoutY="222.0" text="Port" />
+                                <TextField fx:id="fldHostName" layoutX="204.0" layoutY="191.0" prefWidth="122.0" promptText="host name" text="localhost" />
+                                <TextField fx:id="fldPort" layoutX="204.0" layoutY="219.0" prefWidth="61.0" promptText="port number" text="7001" />
+                                <CheckBox fx:id="closeFlag" layoutX="90.0" layoutY="300.0" mnemonicParsing="false" selected="true" text="Close Application when Fixture generated successfully" />
+                                <TextField fx:id="fldQueryName" layoutX="204.0" layoutY="103.0" prefWidth="236.0" promptText="Query Name" text="HistoryFilter" />
+                                <Label layoutX="90.0" layoutY="71.0" text="Base Selection Criteria" />
+                                <ImageView fitHeight="62.44444444444444" fitWidth="70.25" layoutX="543.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@STeF.png" />
+                                    </image>
+                                </ImageView>
+                                <Separator layoutX="88.0" layoutY="93.0" prefWidth="408.0" />
+                                <Label layoutX="90.0" layoutY="157.0" text="Connection Details" />
+                                <Separator layoutX="90.0" layoutY="179.0" prefWidth="408.0" />
+                                <Label layoutX="90.0" layoutY="106.0" text="Query" />
+                                <Separator layoutX="90.0" layoutY="289.0" prefWidth="408.0" />
+                                <Label layoutX="90.0" layoutY="267.0" text="Application Settings" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Log">
+                    <content>
+                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <TextArea fx:id="logData" maxWidth="-1.0" prefHeight="372.0" prefWidth="556.0" wrapText="true" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Label fx:id="messageBar" prefWidth="556.0" text="Status" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+    </children>
+</AnchorPane>
