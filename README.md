@@ -3,6 +3,10 @@ Functional Setup Testing Framework for PTC Integrity
 
 It uses Fitnesse, a Java Wiki for the test execution.
 
+## Documentation
+
+See Folder "doc" for details in PDF and PPT
+
 ##  Development environment
 - PTC Integrity LM 10.9 (also 11.0 should be fine)
 - Netbeans 7.4 (or 8)
