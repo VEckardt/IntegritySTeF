@@ -32,12 +32,13 @@ See Folder "doc" for details in PDF and PPT
 
 ## Test Execution
 - Semi automated or fully automated
+- for initial or regression tests
 
 ## Package Content / File overview
 - t.b.d.
 
 ## Tested with
-- t.b.d.
+- Ax. 25 common Integrity Actions 
 
 ## Inside the files
 - t.b.d.
